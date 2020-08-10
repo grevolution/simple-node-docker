@@ -1,12 +1,17 @@
+/*jshint esversion: 8 */
+
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 async function main() {
-  while(true) {
-    console.log('Containers rule!');
-    await sleep(5000);
-  }
+    while (true) {
+
+        const favoriteFood = process.env.FAVORITE_FOOD;
+        console.log(`My favorite food is ${favoriteFood}`);
+
+        await sleep(5000);
+    }
 }
 
 main();
